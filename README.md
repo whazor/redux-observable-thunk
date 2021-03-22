@@ -16,11 +16,11 @@ import { thunk, withPayload } from "redux-observable-thunk";
 export const {actions: createEnvironmentActions, actions: {
   request: createEnvironment, 
   fulfilled: createEnvironmentFulfilled, 
-  rejection: createEnvironmentRejection
+  rejected: createEnvironmentRejected
 }} = createThunkActions("environments/createEnvironment", {
     request: withPayload<EnvironmentDef>(),
     fulfilled: withPayload<{ id: number }>(),
-    rejection: withPayload<{ error: string }>()
+    rejected: withPayload<{ error: string }>()
   });
 ```
 

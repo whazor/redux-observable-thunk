@@ -1,6 +1,6 @@
 import { createAction, PrepareAction } from "@reduxjs/toolkit";
 
-export function createThunkAction<
+export function createThunkActions<
   PARequest extends PrepareAction<any>,
   PASuccess extends PrepareAction<any>,
   PARejected extends PrepareAction<any>
@@ -19,7 +19,7 @@ export function createThunkAction<
     }
   }
 
-export type ReturnThunkType<A> = A extends ReturnType<typeof createThunkAction>["actions"] ? 
+export type ReturnThunkType<A> = A extends ReturnType<typeof createThunkActions>["actions"] ? 
   ReturnType<A["request"]> | 
   ReturnType<A["fulfilled"]> | 
   ReturnType<A["rejected"]> : never
