@@ -86,7 +86,13 @@ export type RootAction =
   | EnvironmentsActions
   /* | ...*/;
 
-export type RootState = ReturnType<typeof store.getState>;
+export const rootReducers =
+  combineReducers({
+    accountReducer,
+    bucketReducer,
+  });
+
+export type RootState = ReturnType<typeof rootReducer>;
 
 export const rootEpic = combineEpics(
   ...accountEpic,
