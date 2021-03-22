@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "esnext",
+    "declaration": true,
+    "outDir": "./dist",
+    "typeRoots": ["./node_modules/@types"],
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

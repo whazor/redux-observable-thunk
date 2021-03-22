@@ -1,0 +1,21 @@
+{
+  "name": "redux-observable-thunk",
+  "version": "1.0.0",
+  "description": "Add thunks and redux-toolkit integration into redux-observable",
+  "main": "src/index.ts",
+  "repository": "https://github.com/whazor/redux-observable-thunk",
+  "author": "Nanne Wielinga",
+  "license": "MIT",
+  "peerDependencies": {
+    "@reduxjs/toolkit": "^1.5.0",
+    "redux": "^4.0.5",
+    "redux-observable": "^1.2.0",
+    "rxjs": "^6.6.6"
+  },
+  "devDependencies": {
+    "@reduxjs/toolkit": "^1.5.0",
+    "redux": "^4.0.5",
+    "redux-observable": "^1.2.0",
+    "rxjs": "^6.6.6"
+  }
+}
