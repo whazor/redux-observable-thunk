@@ -1,6 +1,6 @@
 {
   "name": "redux-observable-thunk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Add thunks and redux-toolkit integration into redux-observable",
   "main": "src/index.ts",
   "repository": "https://github.com/whazor/redux-observable-thunk",
