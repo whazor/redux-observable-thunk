@@ -10,7 +10,7 @@ We provide three different methods to simplify type-safe creation and usage of t
 ### Create thunk actions
 Create all the actions, the `createEnvironmentActions` is used next for ReturnThunkType. Exported are the actions named `createEnvironment`, `createEnvironmentFulfilled`, `createEnvironmentFailure`.
 ```typescript
-import { thunk, withPayload } from "redux-observable-thunk";
+import { createThunkActions, withPayload } from "redux-observable-thunk";
 
 // note, the variables createEnvironments* are created here
 export const {actions: createEnvironmentActions, actions: {
