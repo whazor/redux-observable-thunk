@@ -1,3 +1,4 @@
 export { withPayload } from './withPayload';
 export { thunk } from './thunk';
-export { createThunkActions, ReturnThunkType } from './createThunkActions';
+export { createThunkActions } from './createThunkActions';
+export type {ReturnThunkType} from './createThunkActions';

@@ -1,12 +1,10 @@
 import { configure, marbles } from "rxjs-marbles/jest";
 import { Action } from "redux";
-import { ActionsObservable, StateObservable } from "redux-observable";
+import { StateObservable } from "redux-observable";
 import { of, Subject, throwError } from "rxjs";
 import { Context } from "rxjs-marbles/context";
 import { Epic } from 'redux-observable'
-
-
-import { thunk, withPayload, createThunkActions, ReturnThunkType } from "redux-observable-thunk";
+import { thunk, withPayload, createThunkActions, ReturnThunkType } from ".";
 import { catchError, map } from "rxjs/operators";
 
 export const wrapHelpers = <A extends Action, S extends {}>(
@@ -18,12 +16,12 @@ export const wrapHelpers = <A extends Action, S extends {}>(
     marbles: string,
     values?: { [marble: string]: A },
     error?: any // eslint-disable-line @typescript-eslint/no-explicit-any
-  ) => new ActionsObservable(helpers.cold<A>(marbles, values, error)),
+  ) => helpers.cold<A>(marbles, values, error),
   hotAction: (
     marbles: string,
     values?: { [marble: string]: A },
     error?: any // eslint-disable-line @typescript-eslint/no-explicit-any
-  ) => new ActionsObservable(helpers.hot<A>(marbles, values, error)),
+  ) => helpers.hot<A>(marbles, values, error),
   hotState: (
     marbles: string,
     values?: { [marble: string]: S },

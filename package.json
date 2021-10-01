@@ -1,6 +1,6 @@
 {
   "name": "redux-observable-thunk",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Add thunks and redux-toolkit integration into redux-observable",
   "main": "dist/index.js",
   "types": "",
@@ -9,21 +9,21 @@
   "license": "MIT",
   "peerDependencies": {
     "@reduxjs/toolkit": "^1.5.0",
-    "redux": "^4.0.5",
-    "redux-observable": "^1.2.0",
-    "rxjs": "^6.6.6"
+    "redux": "^4.0.0",
+    "redux-observable": "^2.0.0",
+    "rxjs": "^7.0.0"
   },
   "devDependencies": {
-    "@reduxjs/toolkit": "^1.5.0",
+    "@reduxjs/toolkit": "^1.6.1",
     "@types/jest": "^26.0.21",
     "esbuild": "^0.9.6",
     "jest": "^26.6.3",
-    "redux": "^4.0.5",
-    "redux-observable": "^1.2.0",
-    "rxjs": "^6.6.6",
-    "rxjs-marbles": "^6.0.1",
+    "redux": "^4.1.1",
+    "redux-observable": "^2.0.0",
+    "rxjs": "^7.3.0",
+    "rxjs-marbles": "^7.0.1",
     "ts-jest": "^26.5.4",
-    "typescript": "^4.2.3"
+    "typescript": "^4.4.3"
   },
   "scripts": {
     "build": "node ./build.js && tsc --emitDeclarationOnly --outDir dist",

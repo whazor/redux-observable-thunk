@@ -1,7 +1,7 @@
 import { Action } from 'redux';
 import { Observable } from 'rxjs';
 import { filter, mergeMap, withLatestFrom } from 'rxjs/operators';
-import { Epic, ActionsObservable, StateObservable } from 'redux-observable'
+import { Epic, StateObservable } from 'redux-observable'
 
 
 
@@ -19,7 +19,7 @@ export function thunk<
     match: (action: Action<any>) => action is A, 
     result: (action: A, state: State<E>, dependencies: Dependencies<E>) => Observable<Output<E>>
   ): E {
-  const epic: Epic<Input<E>, Output<E>, State<E>, Dependencies<E>> = (action$: ActionsObservable<Input<E>>, state$: StateObservable<State<E>>, dependencies: Dependencies<E>) => 
+  const epic: Epic<Input<E>, Output<E>, State<E>, Dependencies<E>> = (action$: Observable<Input<E>>, state$: StateObservable<State<E>>, dependencies: Dependencies<E>) => 
     action$.pipe(
       filter(match),
       withLatestFrom(state$),
