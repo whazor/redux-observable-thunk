@@ -1,10 +1,11 @@
-import { createAction, PrepareAction } from "@reduxjs/toolkit";
+import { AsyncThunk, createAction, PrepareAction } from "@reduxjs/toolkit";
 
 export function createThunkActions<
   PARequest extends PrepareAction<any>,
   PASuccess extends PrepareAction<any>,
-  PARejected extends PrepareAction<any>
->(name: string,
+  PARejected extends PrepareAction<any>,
+  Name extends string = string
+>(name: Name,
   options: {
     request: PARequest,
     fulfilled: PASuccess,
@@ -13,8 +14,8 @@ export function createThunkActions<
     return {
       actions: {
         request: createAction(name, options.request),
-        fulfilled: createAction(name + "Fulfilled", options.fulfilled),
-        rejected: createAction(name + "Rejected", options.rejected)
+        fulfilled: createAction(name + "/fulfilled", options.fulfilled),
+        rejected: createAction(name + "/rejected", options.rejected)
       }
     }
   }
@@ -22,4 +23,8 @@ export function createThunkActions<
 export type ReturnThunkType<A> = A extends ReturnType<typeof createThunkActions>["actions"] ? 
   ReturnType<A["request"]> | 
   ReturnType<A["fulfilled"]> | 
-  ReturnType<A["rejected"]> : never
+  ReturnType<A["rejected"]> : 
+  A extends AsyncThunk<infer _R, infer _TA, infer _C> ? 
+      ReturnType<A['pending']> |
+      ReturnType<A["fulfilled"]> |
+      ReturnType<A["rejected"]> : never;

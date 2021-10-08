@@ -5,6 +5,7 @@
     "target": "esnext",
     "declaration": true,
     "outDir": "./dist",
+    "strict": true,
     "typeRoots": ["./node_modules/@types"],
     "paths": {
       "redux-observable-thunk": ["./src/"]
