@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [2.0.1] - 2022-04-05
+
+Add common js and esm build using tsup.
+
 ## [2.0.0-beta.0] - 2021-10-08
 
 Support for rxjs 7.x, does not support 6.x anymore. Breaking change is that thunk requires `action` as input instead of `action.match`.
