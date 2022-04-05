@@ -1,9 +1,17 @@
 {
   "name": "redux-observable-thunk",
-  "version": "2.0.0-beta.0",
+  "version": "2.0.1",
   "description": "Add thunks and redux-toolkit integration into redux-observable",
-  "main": "dist/index.js",
-  "types": "",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "repository": "https://github.com/whazor/redux-observable-thunk",
   "author": "Nanne Wielinga",
   "license": "MIT",
@@ -21,10 +29,11 @@
     "redux-observable": "^2.0.0",
     "rxjs": "7.3.0",
     "ts-jest": "^27.0.5",
+    "tsup": "^5.12.4",
     "typescript": "^4.4.3"
   },
   "scripts": {
-    "build": "node ./build.js && tsc --emitDeclarationOnly --outDir dist",
+    "build": "tsup src/index.ts --format cjs,esm --dts --sourcemap",
     "test": "jest",
     "prepublish": "yarn run build"
   }

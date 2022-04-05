@@ -1,7 +1,7 @@
 # redux-observable-thunk
 Add thunks and [redux-toolkit](https://redux-toolkit.js.org/) support to [redux-observable](https://redux-observable.js.org/). The thunks are rethought from a type-safe redux-observable perspective, but we support async-thunks from toolkit as well.
 
-To install execute `npm install redux-observable-thunk@2.0.0-beta.0` or `yarn add redux-observable-thunk@2.0.0-beta.0`.
+To install execute `npm install redux-observable-thunk` or `yarn add redux-observable-thunk`.
 
 From version 2.0.0 we only support rxjs 7.x and redux-observable 2.x, see [changelog](CHANGELOG.md) for more details.
 
