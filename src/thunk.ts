@@ -6,7 +6,7 @@ import { ActionCreator, ExtractAction, filterActions } from './filterActions';
 
 
 type Input<E extends Epic> = E extends Epic<infer Input, any, any, any> ? Input : unknown
-type Output<E extends Epic> = E extends Epic<any, infer Output, any, any> ? Output : unknown
+type Output<E extends Epic> = E extends Epic<infer _Input, infer Output, any, any> ? Output : unknown
 type State<E extends Epic> = E extends Epic<any, any, infer State, any> ? State : unknown
 type Dependencies<E extends Epic> = E extends Epic<any, any, any, infer Dependencies> ? Dependencies : unknown
 
