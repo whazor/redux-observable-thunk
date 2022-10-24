@@ -1,6 +1,6 @@
 {
   "name": "redux-observable-thunk",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Add thunks and redux-toolkit integration into redux-observable",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -18,7 +18,9 @@
     }
   },
   "commitlint": {
-    "extends": ["@commitlint/config-conventional"]
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "repository": "https://github.com/whazor/redux-observable-thunk",
   "author": "Nanne Wielinga",
