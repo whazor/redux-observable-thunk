@@ -12,6 +12,14 @@
       "types": "./dist/index.d.ts"
     }
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E  HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": ["@commitlint/config-conventional"]
+  },
   "repository": "https://github.com/whazor/redux-observable-thunk",
   "author": "Nanne Wielinga",
   "license": "MIT",
@@ -36,5 +44,10 @@
     "build": "tsup src/index.ts --format cjs,esm --dts --sourcemap",
     "test": "jest",
     "prepublish": "yarn run build"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "husky": "^8.0.1"
   }
 }
